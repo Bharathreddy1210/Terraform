@@ -14,6 +14,7 @@ resource "aws_instance" "frontend" {
   }
 }
 
+
 variable "instances" {
   default = {
     catalogue = {
