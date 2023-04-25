@@ -18,11 +18,11 @@ resource "aws_instance" "frontend" {
 variable "instances" {
   default = {
     catalogue = {
-      name = catalogue
+      name = "catalogue"
       type = "t3.micro"
     }
     user = {
-      name = user
+      name = "user"
       type = "t3.small"
     }
   }
