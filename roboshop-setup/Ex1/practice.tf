@@ -4,7 +4,7 @@ data "aws_ami" "ami"  {
   owners      = ["631186618481"]
 }
 
-resource "aws_instances" "frontend" {
+resource "aws_instance" "frontend" {
   count = 5
   ami = data.aws_ami.ami.image_id
   instance_type = "t3.micro"
