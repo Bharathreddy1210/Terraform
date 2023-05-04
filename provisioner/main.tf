@@ -6,6 +6,7 @@ resource "aws_instance" "ec2" {
     Name = "demo"
   }
 
+
   provisioner "remote-exec" {
 
     connection {
