@@ -1,25 +1,24 @@
 resource "aws_instance" "ec2" {
-  ami                    ="ami-0b5a2b5b8f2be4ec2"
+  ami                    = "ami-0a017d8ceb274537d"
   instance_type          = "t3.micro"
-  vpc_security_group_ids = ["sg-0c8964a7a7b04adc0"]
+  vpc_security_group_ids = ["sg-0fc69f59ac03ac238"]
   tags = {
     Name = "demo"
   }
-}
 
-provisioner "remote-exec" {
+  provisioner "remote-exec" {
 
-  connection {
-    host     = self_public_ip
-    user     = "root"
-    password = "DevOps321"
+    connection {
+      host     = self.public_ip
+      user     = "root"
+      password = "DevOps321"
+    }
+
+    inline = [
+      "echo Hello"
+    ]
   }
 
-  inline = [
-    "echo Hello"
-  ]
 }
-
-
 
 
