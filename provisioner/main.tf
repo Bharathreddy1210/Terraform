@@ -10,7 +10,7 @@ resource "aws_instance" "ec2" {
 provisioner "remote-exec" {
 
   connection {
-    host     = self.public_ip
+    host     = self_public_ip
     user     = "root"
     password = "DevOps321"
   }
@@ -20,6 +20,6 @@ provisioner "remote-exec" {
   ]
 }
 
-}
+
 
 
